@@ -9,7 +9,7 @@ import route from '../route/route.js'
 	}
 
 	const event = () => {
-	    document.querySelectorAll('a').forEach((item) => 
+	    document.querySelectorAll('a').forEach((item) =>
 	        item.addEventListener('click',
 	            function(evt) {
 	                evt.preventDefault();
@@ -26,8 +26,14 @@ import route from '../route/route.js'
 	    route[pathName].callback()
 	}
 
+	function loadStyle(pathName) {
+		const style = document.createElement('style')
+		style.innerHTML = route[pathName].style()
+	    document.querySelector('head').append(style)
+	}
+
 	function handlerUrl(evt) {
-	    let pathName = '/' 
+	    let pathName = '/'
 	    let url = ''
 
 	    if (evt) {
@@ -36,8 +42,9 @@ import route from '../route/route.js'
 	    }
 
 	    window.location.href = `${url}#${pathName}`
-	    
-	    loadBody(pathName)    
+
+	    loadBody(pathName)
+	    loadStyle(pathName)
 	}
 
 

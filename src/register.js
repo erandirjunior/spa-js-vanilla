@@ -20,6 +20,16 @@ export default function teste() {
 
 				console.log(`First name is ${firstName} and lastName is ${lastName}`)
 			})
-		} 
+		},
+		style: () => {
+			return `
+			body {
+				background-color: #dedede
+			}
+			input {
+				background-color: red;
+			}
+			`
+		}
 	}
 }

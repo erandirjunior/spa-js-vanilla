@@ -4,6 +4,7 @@ export default function index() {
 			<a href="/register">register</a>
 			<a href="/">home</a>
 		`,
-		callback: () => {}
+		callback: () => {},
+		style: () => {}
 	}
 }
